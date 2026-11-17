@@ -8,12 +8,12 @@ async function seedData() {
         await sequelize.authenticate()
         console.log('mysql 연결 성공')
 
-        await sequelize.query('SET FOREIGN_KEY_CHECKS = 0');
+        await sequelize.query('PRAGMA foreign_keys = OFF');
 
         await sequelize.sync({alter: true})
         console.log('테이블 구조 업데이트 완료(기존 회원 데이터 유지)')
 
-        await sequelize.query('SET FOREIGN_KEY_CHECKS = 1');
+        await sequelize.query('PRAGMA foreign_keys = ON');
 
         const dummyNames = ['지은', '민준', '수연', '동현', '서연', '지훈', '유진', '현우', '보영'];
         console.log('테이블 초기화 및 생성 완료')

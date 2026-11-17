@@ -1,0 +1,12 @@
+# 설치 폴더 (Render가 npm install로 다시 만듦)
+node_modules/
+
+# 비밀값
+.env
+
+# macOS / 로그
+.DS_Store
+*.log
+
+# 로컬 DB (배포 서버는 빈 DB로 시작)
+dating_db.sqlite
