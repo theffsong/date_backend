@@ -311,8 +311,8 @@ app.post('/api/social-login', async(req, res) => {
   }
 })
 
-const PORT = 3000;
-app.listen(PORT, async () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', async () => {
   try {
     await sequelize.authenticate();
     // Create missing tables without dropping existing data or rewriting columns.
